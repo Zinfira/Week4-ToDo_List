@@ -38,18 +38,25 @@ $(document).ready(function() {
     var newTask = $("#task").val();
     var newDate = $("#date").val();
     var firstTask = new Task(newTask, newDate);
-
+    var taskRunThru = function(newTask, newDate) {
+      taskList.completeTask(newTask, newDate);
+      taskList.toDo.addTask(finalTask);
+      console.log(tasklist.toDo);
+    });
     // Task.completeTask(newTask, newDate);
-    taskList.addTask(firstTask);
-    console.log(taskList);
     // construct task
-
+    // taskList.addTask(firstTask);
+    // console.log(taskList);
     // loop through the array of objects
     // for each object print out the item and date properties
-    taskList.forEach(function(Task) {
-    return (new Task(newTask, newDate))
+    var loopyBoi = taskList.toDo.forEach() { 
+      function(newTask, newDate) {
+      taskList.completeTask(newTask, newDate);
+      taskList.toDo.addTask(finalTask);
+      //taskList.toDo.push(firstTask);
+      console.log(tasklist.toDo);
     });
-
+  }
   });
 
   $("ul").on('click','li',function() {
